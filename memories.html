@@ -1,0 +1,350 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Little Moments with Kalpana 🌸</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .memory-page {
+            max-width: 1150px;
+            margin: auto;
+            padding: 35px 25px 70px;
+        }
+
+        .memory-heading {
+            text-align: center;
+            margin: 25px auto 45px;
+        }
+
+        .memory-heading h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            margin-bottom: 15px;
+        }
+
+        .memory-heading .lead {
+            margin: auto;
+            max-width: 650px;
+        }
+
+        .memory-banner {
+            padding: 25px;
+            margin: 0 auto 45px;
+            max-width: 760px;
+            text-align: center;
+            background: #fce8f0;
+            border: 1px solid #f5d2e0;
+            border-radius: 22px;
+            color: #765065;
+            line-height: 1.8;
+        }
+
+        .memory-banner .doodle {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 35px 28px;
+            align-items: start;
+        }
+
+        .memory-card {
+            position: relative;
+            background: #fff;
+            padding: 12px 12px 0;
+            border-radius: 5px;
+            box-shadow: 0 12px 30px #71425818;
+            transform: rotate(-2deg);
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .memory-card:nth-child(3n + 2) {
+            transform: rotate(2deg);
+            margin-top: 25px;
+        }
+
+        .memory-card:nth-child(3n) {
+            transform: rotate(-1deg);
+            margin-top: 8px;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-7px) rotate(0);
+            box-shadow: 0 18px 38px #71425825;
+            z-index: 2;
+        }
+
+        .memory-photo {
+            position: relative;
+            overflow: hidden;
+            background: #f8dce8;
+            border-radius: 3px;
+            aspect-ratio: 4 / 5;
+        }
+
+        .memory-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .memory-card:hover .memory-photo img {
+            transform: scale(1.04);
+        }
+
+        .photo-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #fffaf0e8;
+            color: #bd597b;
+            border-radius: 30px;
+            padding: 6px 11px;
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        .memory-caption {
+            min-height: 100px;
+            padding: 17px 8px 20px;
+            text-align: center;
+        }
+
+        .memory-caption h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #bd597b;
+            margin: 0 0 8px;
+        }
+
+        .memory-caption p {
+            color: #806b78;
+            font-size: .9rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .tape {
+            position: absolute;
+            z-index: 3;
+            width: 72px;
+            height: 21px;
+            background: #f5c6d7c9;
+            top: -9px;
+            left: calc(50% - 36px);
+            transform: rotate(-5deg);
+        }
+
+        .memory-note {
+            margin: 65px auto 45px;
+            max-width: 780px;
+            padding: 30px;
+            text-align: center;
+            background: #fff0f5;
+            border-radius: 24px;
+            border: 1px dashed #e8a7bf;
+            color: #775065;
+            line-height: 1.9;
+        }
+
+        .memory-note .big-heart {
+            color: #e65b94;
+            font-size: 2.8rem;
+        }
+
+        .memory-note h2 {
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+            color: #bd597b;
+        }
+
+        .memory-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .memory-navigation .button {
+            margin-top: 0;
+        }
+
+        .memory-navigation .back-button {
+            background: #f4e3eb;
+            color: #87516a;
+            box-shadow: none;
+        }
+
+        @media (max-width: 800px) {
+            .memory-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 28px 20px;
+            }
+
+            .memory-card:nth-child(n) {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .memory-page {
+                padding: 20px 16px 45px;
+            }
+
+            .memory-grid {
+                gap: 24px 14px;
+            }
+
+            .memory-card {
+                padding: 7px 7px 0;
+            }
+
+            .memory-caption {
+                padding: 12px 3px 16px;
+            }
+
+            .memory-caption h3 {
+                font-size: 1rem;
+            }
+
+            .memory-caption p {
+                font-size: .78rem;
+            }
+
+            .memory-note {
+                padding: 23px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<main class="memory-page">
+
+    <header class="memory-heading">
+        <p class="eyebrow">♡ A LITTLE ALBUM FULL OF HAPPINESS ♡</p>
+        <h1>Little moments, <span class="script">big smiles.</span></h1>
+        <p class="lead">
+            A little collection of beautiful things, sweet memories,
+            and all the little reasons that make you special, my Wife. 🌷
+        </p>
+    </header>
+
+    <div class="memory-banner">
+        <div class="doodle">🌸 🦋 💗</div>
+        <strong>Dear Wife,</strong><br>
+        If smiles were flowers, you would have an entire garden.
+        Here's a little scrapbook made to brighten your day. ✨
+    </div>
+
+    <section class="memory-grid">
+
+        <!-- Change each image path to match your local filenames. -->
+
+        <article class="memory-card">
+            <span class="tape"></span>
+            <div class="memory-photo">
+                <img src="image1.jpeg" alt="A special memory">
+                <span class="photo-number">Memory 01 ♡</span>
+            </div>
+            <div class="memory-caption">
+                <h3>😉 Steal My Smile</h3>
+                <p>Some moments deserve to be framed, and some smiles deserve to be stolen. 😉❤️ 🌷</p>
+            </div>
+        </article>
+
+        <article class="memory-card">
+            <span class="tape"></span>
+            <div class="memory-photo">
+                <img src="image2.jpg" alt="A happy moment">
+                <span class="photo-number">Memory 02 ✨</span>
+            </div>
+            <div class="memory-caption">
+                <h3>❤️ Timeless Beauty</h3>
+                <p>Time moves on, moments pass, but some faces stay beautiful in every memory. ❤️☀️</p>
+            </div>
+        </article>
+
+        <article class="memory-card">
+            <span class="tape"></span>
+            <div class="memory-photo">
+                <img src="image3.jpg" alt="A lovely memory">
+                <span class="photo-number">Memory 03 🌸</span>
+            </div>
+            <div class="memory-caption">
+                <h3>😍 Endless Fascination</h3>
+                <p>A thousand pictures, a million feelings, and one face I could never get tired of. 😍 💗</p>
+            </div>
+        </article>
+
+        <article class="memory-card">
+            <span class="tape"></span>
+            <div class="memory-photo">
+                <img src="image4.jpg" alt="A beautiful day">
+                <span class="photo-number">Memory 04 🦋</span>
+            </div>
+            <div class="memory-caption">
+                <h3>💖 You’re the Reason</h3>
+                <p>You’re not just a part of the memory; you’re the reason it’s special. 💖🎀</p>
+            </div>
+        </article>
+
+        <article class="memory-card">
+            <span class="tape"></span>
+            <div class="memory-photo">
+                <img src="image5.jpg" alt="A favorite moment">
+                <span class="photo-number">Memory 05 💌</span>
+            </div>
+            <div class="memory-caption">
+                <h3>🥰 First Glance</h3>
+                <p>If I could relive one moment, I’d choose the one where I first noticed you. 🥰⭐</p>
+            </div>
+        </article>
+
+        <article class="memory-card">
+            <span class="tape"></span>
+            <div class="memory-photo">
+                <img src="image6.jpg" alt="Sweet memory">
+                <span class="photo-number">Memory 06 🎂</span>
+            </div>
+            <div class="memory-caption">
+                <h3>💘 Heart Melter</h3>
+                <p>Memories may be frozen in time, but you still manage to melt my heart. 💘🎉</p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="memory-note">
+        <div class="big-heart">♡</div>
+        <h2>A tiny note for you</h2>
+        <p>
+            My Wife, may your life be filled with kind people,
+            unexpected happiness, warm hugs, and dreams that come true.
+            Keep smiling, keep shining, and always remember that you
+            deserve beautiful things. 💗
+        </p>
+        <p><em>Sending you a little happiness, wrapped with love. 🎀</em></p>
+    </section>
+
+    <div class="memory-navigation">
+        <a class="button back-button" href="index.html">← Welcome</a>
+        <a class="button" href="wish.html">Open your surprise 💌 →</a>
+    </div>
+
+</main>
+
+<footer>Made with warm wishes for Kalpana 💗</footer>
+</body>
+</html>
+```
